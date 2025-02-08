@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: pkainnet/ingress2:v1
+        image: pkainnet/app2:v1
         imagePullPolicy: Always
         resources:
           requests:
@@ -33,12 +33,12 @@ metadata:
 spec:
   selector:
     app: app2
-  type: NodePort  # Add this line
+  # type: NodePort  # Add this line
   ports:
   - protocol: TCP
     port: 80 #service-port
     targetPort: 80 #container-port
-    nodePort: 30080  # Random high port
+    # nodePort: 30080  # Random high port
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
