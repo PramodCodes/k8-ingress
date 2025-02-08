@@ -33,10 +33,12 @@ metadata:
 spec:
   selector:
     app: app2
+  type: NodePort  # Add this line
   ports:
   - protocol: TCP
     port: 80 #service-port
     targetPort: 80 #container-port
+    nodePort: 30080  # Random high port
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
